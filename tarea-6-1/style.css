@@ -1,0 +1,77 @@
+.oculto {
+    display: none;
+}
+
+body {
+    background-color: #F8B195;
+}
+
+.margin {
+    margin: 50px;
+}
+
+div.box-one {
+    margin: 20px;
+    background-color: #355C7D;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 25px;
+    border: 2px;
+    padding: 20px;
+    width: 300px;
+    height: 155 px;
+}
+
+div.box-two {
+    background-color: #355C7D;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 25px;
+    border: 2px;
+    padding: 20px;
+    width: 300px;
+    height: 155 px;
+}
+
+.input-rounded {
+    border-radius: 5px;
+    padding: 20px;
+    width: 150px;
+    height: 5px;
+    border: none;
+    margin: 3px;
+}
+
+.input-integrantes {
+    border-radius: 5px;
+    padding: 20px;
+    width: 150px;
+    height: 5px;
+    border: none;
+    margin: 3px;
+}
+
+.button-rounded {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #F67280;
+    margin: 10px;
+    border-radius: 5px;
+    border: 20px;
+    padding: 12px;
+    width: 200px;
+    height: 50px;
+}
+
+.box-three {
+    margin: 10px;
+    background-color: #6C5b7b;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 25px;
+    border: 2px;
+    padding: 20px;
+    width: 300px;
+    height: 155 px;
+}
