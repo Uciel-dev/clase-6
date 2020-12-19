@@ -7,9 +7,9 @@ menor salario anual, salario anual promedio y salario mensual promedio.
 
 Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
 */
-function createDiv(indice) {
+function createDiv(index) {
     const $div = document.createElement('div')
-    $div.id = 'cards'
+    $div.id = index
     $div.className = 'center card fonts'
 
     return $div
@@ -39,7 +39,7 @@ function createBtn() {
     $btn.textContent = 'Quitar'
 
     $btn.onclick = function() {
-        const $valor = document.querySelector('#cards')
+        const $valor = document.querySelector('#1')
         console.log($valor)
     }
 
@@ -62,9 +62,10 @@ function createSalaryCards(number) {
     return $div
 }
 
-const $btnAdd = document.querySelector('#add')
-let numberOfSalaryCards = 0;
 
+
+const $btnAdd = document.querySelector('#add')
+let numberOfSalaryCards = 0
 
 $btnAdd.onclick = function() {
     const $salaryCards = createSalaryCards(numberOfSalaryCards + 1);
