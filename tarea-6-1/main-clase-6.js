@@ -39,7 +39,7 @@ function crearInput() {
 
 
 function desabilitarClassOculto() {
-    document.querySelector('.oculto').className = '';
+    document.querySelector('.hidden').className = '';
 }
 
 function styleBoxTwo() {

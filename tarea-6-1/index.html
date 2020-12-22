@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarea 6.1</title>
+
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,7 +25,7 @@
         </div>
         <div id="labels-inputs"></div>
         </form>
-        <div id="resultados" class="oculto">
+        <div id="resultados" class="hidden">
             <em id="promedio"> </em>
             <br>
             <em id="mayor"> </em>
@@ -30,11 +33,28 @@
             <em id="menor"> </em>
             <br>
             <input class="button-rounded" type="button" value="Empezar de Nuevo" onClick="document.location.reload(true)">
-
+            <input class="button-rounded" type="button" value="Siguiente">
 
         </div>
 
+        <div class="exercise-6-2">
+            <div class="center">
+                <button id="add" class="btn-add fonts" type="button">Agregar</button>
+            </div>
+
+            <div id="salary-cards"></div>
+            <button class="fonts btn-calculate">Calcular</button>
+
+            <div id="result" class="hidden">
+                <label class="color-font fonts" id="average-salary">El promedio es: 1000</label>
+                <br>
+                <label class="color-font fonts" id="higher-salary">El mayor es: 780000</label>
+                <br>
+                <label class="color-font fonts" id="lower-salary">El menor es: 153245</label>
+            </div>
+        </div>
     </center>
+
 
     <script src="main-clase-6.js"></script>
     <script src="calculo.js"></script>

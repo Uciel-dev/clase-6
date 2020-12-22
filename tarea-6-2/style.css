@@ -4,6 +4,10 @@ body {
     background-color: #70AE98;
 }
 
+.hidden {
+    display: none;
+}
+
 .center {
     text-align: center;
     margin: 0 auto;

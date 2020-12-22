@@ -1,9 +1,11 @@
-.oculto {
-    display: none;
+body {
+    background: #F8B195;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    background-color: #F8B195;
+.hidden {
+    display: none;
 }
 
 .margin {
@@ -74,4 +76,81 @@ div.box-two {
     padding: 20px;
     width: 300px;
     height: 155 px;
+}
+
+.exercise-6-2 {
+    background-color: #70AE98;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.fonts {
+    font-family: 'Righteous', cursive;
+}
+
+.color-font {
+    color: #2e3436;
+}
+
+.btn-add {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #F67280;
+    margin: 10px;
+    border-radius: 5px;
+    border: 20px;
+    padding: 12px;
+    width: 200px;
+    height: 50px;
+}
+
+.btn-calculate {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #F67280;
+    margin: 10px;
+    border-radius: 5px;
+    border: 20px;
+    padding: 12px;
+    height: 50px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #ffda8c;
+    margin: 10px;
+    border-radius: 5px;
+    border: 20px;
+    padding: 30px;
+    width: 200px;
+    height: 80px;
+}
+
+.btn-remove {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #F67280;
+    margin: 2px;
+    border-radius: 5px;
+    border: 5px;
+    padding: 5px;
+    width: 100px;
+    height: 45px;
+}
+
+#result {
+    background-color: #3b7a3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    padding: 25px;
+    width: 180px;
+}
+
+.inputs {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    padding: 0.25em;
+    background-color: #fff;
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
 }

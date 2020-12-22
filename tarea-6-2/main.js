@@ -9,8 +9,9 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como
 */
 function createDiv(index) {
     const $div = document.createElement('div')
-    $div.id = index
+    $div.id = 'card-' + index
     $div.className = 'center card fonts'
+
 
     return $div
 }
@@ -37,10 +38,8 @@ function createBtn() {
     $btn.className = 'fonts btn-remove'
     $btn.type = 'button'
     $btn.textContent = 'Quitar'
-
     $btn.onclick = function() {
-        const $valor = document.querySelector('#1')
-        console.log($valor)
+        this.remove()
     }
 
     return $btn
