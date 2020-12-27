@@ -19,45 +19,28 @@
             <h3>¿Cuantos son en tu grupo familiar?</h3>
             <p>Aclaracion: lo que vos consideres como grupo familar.</p>
             <form>
-                <input class="input-rounded" type="number" id="cantidad-familia">
-                <button class="button-rounded" id="enviar-cantidad-familia">Enviar</button>
+                <input class="input-rounded" type="number" id="quantity-family">
+                <button class="button-rounded" id="send-family-amount">Enviar</button>
 
         </div>
         <div id="labels-inputs"></div>
         </form>
-        <div id="resultados" class="hidden">
-            <em id="promedio"> </em>
+        <div id="result" class="hidden">
+            <em id="average"> </em>
             <br>
-            <em id="mayor"> </em>
+            <em id="higher"> </em>
             <br>
-            <em id="menor"> </em>
+            <em id="lower"> </em>
             <br>
-            <input class="button-rounded" type="button" value="Empezar de Nuevo" onClick="document.location.reload(true)">
-            <input class="button-rounded" type="button" value="Siguiente">
+            <input id="btn-again" class="button-rounded" type="button" value="Empezar de Nuevo" onClick="document.location.reload(true)">
 
         </div>
 
-        <div class="exercise-6-2">
-            <div class="center">
-                <button id="add" class="btn-add fonts" type="button">Agregar</button>
-            </div>
-
-            <div id="salary-cards"></div>
-            <button class="fonts btn-calculate">Calcular</button>
-
-            <div id="result" class="hidden">
-                <label class="color-font fonts" id="average-salary">El promedio es: 1000</label>
-                <br>
-                <label class="color-font fonts" id="higher-salary">El mayor es: 780000</label>
-                <br>
-                <label class="color-font fonts" id="lower-salary">El menor es: 153245</label>
-            </div>
-        </div>
     </center>
 
 
-    <script src="main-clase-6.js"></script>
-    <script src="calculo.js"></script>
+    <script src="main.js"></script>
+    <script src="calculate.js"></script>
 </body>
 
 

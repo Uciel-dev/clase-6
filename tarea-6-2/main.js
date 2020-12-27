@@ -33,25 +33,27 @@ function createInput() {
 }
 
 
-function createBtn() {
+function createBtn(index) {
     const $btn = document.createElement('button')
     $btn.className = 'fonts btn-remove'
     $btn.type = 'button'
     $btn.textContent = 'Quitar'
+
+
     $btn.onclick = function() {
-        this.remove()
+        document.querySelector('#card-' + index).remove()
     }
 
     return $btn
 }
 
-function createSalaryCards(number) {
+function createSalaryCards(index) {
 
-    const $div = createDiv(number);
+    const $div = createDiv(index)
 
     const $label = createLabel()
     const $input = createInput()
-    const $btn = createBtn()
+    const $btn = createBtn(index)
 
 
     $div.appendChild($label)
@@ -67,6 +69,45 @@ const $btnAdd = document.querySelector('#add')
 let numberOfSalaryCards = 0
 
 $btnAdd.onclick = function() {
-    const $salaryCards = createSalaryCards(numberOfSalaryCards + 1);
+
+    const $salaryCards = createSalaryCards(numberOfSalaryCards++)
     document.querySelector('#salary-cards').appendChild($salaryCards)
+
+}
+
+
+const $btnCalculate = document.querySelector('#btn-calculate')
+
+$btnCalculate.onclick = function() {
+    const $salaryNode = document.querySelectorAll('#salary')
+    const salaryList = []
+    console.log($salaryNode)
+
+    for (let i = 0; i < $salaryNode.length; i++) {
+
+        salaryList.push(Number($salaryNode[i].value))
+    }
+
+    console.log(salaryList)
+
+    const averageSalary = calculateAverage(salaryList)
+    const higherSalary = determineHigherSalary(salaryList)
+    const lowerSalary = determineLowerSalary(salaryList)
+
+
+    showResult(averageSalary, higherSalary, lowerSalary)
+}
+
+function showResult(average, higher, lower) {
+
+    disableHiddenClass()
+
+    document.querySelector('#average-salary').innerHTML = `El promedio es: ${average}`;
+    document.querySelector('#higher-salary').innerHTML = `El mayor es: ${higher}`;
+    document.querySelector('#lower-salary').innerHTML = `El menor es: ${lower}`;
+}
+
+function disableHiddenClass() {
+
+    document.querySelector('#result').classList = ''
 }
