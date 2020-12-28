@@ -70,33 +70,15 @@ let numberOfSalaryCards = 0
 
 $btnAdd.onclick = function() {
 
+    document.querySelector('#btn-calculate').className = 'fonts btn-calculate'
+
+
     const $salaryCards = createSalaryCards(numberOfSalaryCards++)
     document.querySelector('#salary-cards').appendChild($salaryCards)
 
 }
 
 
-const $btnCalculate = document.querySelector('#btn-calculate')
-
-$btnCalculate.onclick = function() {
-    const $salaryNode = document.querySelectorAll('#salary')
-    const salaryList = []
-    console.log($salaryNode)
-
-    for (let i = 0; i < $salaryNode.length; i++) {
-
-        salaryList.push(Number($salaryNode[i].value))
-    }
-
-    console.log(salaryList)
-
-    const averageSalary = calculateAverage(salaryList)
-    const higherSalary = determineHigherSalary(salaryList)
-    const lowerSalary = determineLowerSalary(salaryList)
-
-
-    showResult(averageSalary, higherSalary, lowerSalary)
-}
 
 function showResult(average, higher, lower) {
 
@@ -110,4 +92,34 @@ function showResult(average, higher, lower) {
 function disableHiddenClass() {
 
     document.querySelector('#result').classList = ''
+}
+
+
+
+const $btnCalculate = document.querySelector('#btn-calculate')
+
+$btnCalculate.onclick = function() {
+
+
+    const $salaryNode = document.querySelectorAll('#salary')
+    const salaryList = []
+
+    console.log($salaryNode.length)
+
+    for (let i = 0; i < $salaryNode.length; i++) {
+        if ($salaryNode[i].value !== '') {
+
+            salaryList.push(Number($salaryNode[i].value))
+        }
+
+    }
+    console.log(salaryList.length)
+
+
+    const averageSalary = calculateAverage(salaryList)
+    const higherSalary = determineHigherSalary(salaryList)
+    const lowerSalary = determineLowerSalary(salaryList)
+
+
+    showResult(averageSalary, higherSalary, lowerSalary)
 }
