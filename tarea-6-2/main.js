@@ -104,7 +104,6 @@ $btnCalculate.onclick = function() {
     const $salaryNode = document.querySelectorAll('#salary')
     const salaryList = []
 
-    console.log($salaryNode.length)
 
     for (let i = 0; i < $salaryNode.length; i++) {
         if ($salaryNode[i].value !== '') {
@@ -113,7 +112,6 @@ $btnCalculate.onclick = function() {
         }
 
     }
-    console.log(salaryList.length)
 
 
     const averageSalary = calculateAverage(salaryList)
