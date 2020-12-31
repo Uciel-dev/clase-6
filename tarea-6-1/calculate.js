@@ -1,26 +1,26 @@
-function determineOlderAge(ageList) {
-    let higher = ageList[0];
+function getOldest(ageList) {
+    let major = ageList[0];
     for (let i = 1; i < ageList.length; i++) {
-        if (ageList[i] > higher) {
-            higher = ageList[i];
+        if (ageList[i] > major) {
+            major = ageList[i];
         }
     }
 
-    return higher;
+    return major;
 }
 
-function determineMinorAge(ageList) {
-    let lower = ageList[0];
+function getYoungest(ageList) {
+    let minor = ageList[0];
     for (let i = 1; i < ageList.length; i++) {
-        if (ageList[i] < lower) {
-            lower = ageList[i];
+        if (ageList[i] < minor) {
+            minor = ageList[i];
         }
     }
 
-    return lower;
+    return minor;
 }
 
-function calculateAverage(ageList) {
+function getAverage(ageList) {
     let totalAmount = 0;
     for (let i = 0; i < ageList.length; i++) {
         totalAmount += ageList[i];
