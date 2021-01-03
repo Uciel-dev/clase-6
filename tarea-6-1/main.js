@@ -53,18 +53,18 @@ function styleResults() {
 }
 
 
-function showResults(average, major, minor) {
+function showResults(average, oldest, yongest) {
 
     showCalulate()
     styleResults()
 
     document.querySelector('#average').innerHTML = `El promedio es: ${average}`;
-    document.querySelector('#major').innerHTML = `El mayor es: ${major}`;
-    document.querySelector('#minor').innerHTML = `El menor es: ${minor}`;
+    document.querySelector('#oldest').innerHTML = `El mayor es: ${oldest}`;
+    document.querySelector('#yongest').innerHTML = `El menor es: ${yongest}`;
 }
 
 
-function createCalculateButton($familyMembers) {
+function createCalculateButton() {
     const $calculateBtn = document.createElement('button');
     $calculateBtn.textContent = "Calcular";
     $calculateBtn.className = "button-rounded";
@@ -77,58 +77,59 @@ function createCalculateButton($familyMembers) {
             ageList.push(Number($inputAge[i].value));
         }
 
-        let major = getOldest(ageList);
-        let minor = getYoungest(ageList);
+        let oldest = getOldest(ageList);
+        let youngest = getYoungest(ageList);
         let average = getAverage(ageList);
 
-        showResults(average, major, minor);
+        showResults(average, oldest, youngest);
     }
 
 
-    $familyMembers.appendChild($calculateBtn);
+    return $calculateBtn;
 }
 
-function renderFamilyMembersUI(totalFamilyMembers, $aFamilyMember) {
+function renderFamilyMembersUI(totalFamilyMembers) {
+
+    const $familyMembers = document.querySelector('#family-members');
 
     for (let i = 0; i < totalFamilyMembers; i++) {
         const $label = createLabel();
-        $aFamilyMember.appendChild($label);
+        $familyMembers.appendChild($label);
 
         const $input = createInput();
-        $aFamilyMember.appendChild($input);
+        $familyMembers.appendChild($input);
 
-        $aFamilyMember.appendChild(document.createElement('br'));
+        $familyMembers.appendChild(document.createElement('br'));
     }
-
+    return $familyMembers
 }
 
 
 function createFamilyMembersAgeInput(totalFamilyMembers) {
 
-    const $familyMembers = document.querySelector('#family-members');
+    const $totalFamilymembers = renderFamilyMembersUI(totalFamilyMembers);
+    const $calculateBtn = createCalculateButton()
 
-    renderFamilyMembersUI(totalFamilyMembers, $familyMembers)
-    createCalculateButton($familyMembers);
+    $totalFamilymembers.appendChild($calculateBtn);
+
     familyMembersStyleContainer();
+    resetFamilyQuantity();
 
 }
 
 
 
 
-const $familyQuantityBtn = document.querySelector('#send-family-amount');
-
-$familyQuantityBtn.onclick = function() {
+document.querySelector('#send-family-amount').onclick = function() {
 
     const quantityFamily = Number(document.querySelector('#quantity-family').value);
 
     if (isPositiveNumber(quantityFamily)) {
 
-        resetFamilyQuantity()
         createFamilyMembersAgeInput(quantityFamily);
 
-
     } else {
+
         tryAgain()
     }
 

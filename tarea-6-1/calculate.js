@@ -1,23 +1,23 @@
 function getOldest(ageList) {
-    let major = ageList[0];
+    let oldest = ageList[0];
     for (let i = 1; i < ageList.length; i++) {
-        if (ageList[i] > major) {
-            major = ageList[i];
+        if (ageList[i] > oldest) {
+            oldest = ageList[i];
         }
     }
 
-    return major;
+    return oldest;
 }
 
 function getYoungest(ageList) {
-    let minor = ageList[0];
+    let younget = ageList[0];
     for (let i = 1; i < ageList.length; i++) {
-        if (ageList[i] < minor) {
-            minor = ageList[i];
+        if (ageList[i] < younget) {
+            younget = ageList[i];
         }
     }
 
-    return minor;
+    return younget;
 }
 
 function getAverage(ageList) {
