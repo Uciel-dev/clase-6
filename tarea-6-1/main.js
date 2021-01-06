@@ -77,9 +77,9 @@ function createCalculateButton() {
             ageList.push(Number($inputAge[i].value));
         }
 
-        let oldest = getOldest(ageList);
-        let youngest = getYoungest(ageList);
-        let average = getAverage(ageList);
+        const oldest = getOldest(ageList);
+        const youngest = getYoungest(ageList);
+        const average = getAverage(ageList);
 
         showResults(average, oldest, youngest);
     }
