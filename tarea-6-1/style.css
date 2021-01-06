@@ -12,7 +12,7 @@ body {
     margin: 50px;
 }
 
-div.box-one {
+.initial-card {
     margin: 20px;
     background-color: #355C7D;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -24,7 +24,7 @@ div.box-one {
     height: 155 px;
 }
 
-div.box-two {
+.family-members-card {
     background-color: #355C7D;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -65,7 +65,7 @@ div.box-two {
     height: 50px;
 }
 
-.box-three {
+.result-card {
     margin: 10px;
     background-color: #6C5b7b;
     padding: 10px;

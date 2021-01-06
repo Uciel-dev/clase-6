@@ -7,30 +7,32 @@
     <title>Tarea 6.1</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
     <center>
-        <div class="box-one">
+        <div class="initial-card">
 
             <h3>¿Cuantos son en tu grupo familiar?</h3>
             <p>Aclaracion: lo que vos consideres como grupo familar.</p>
-            <form>
-                <input class="input-rounded" type="number" id="quantity-family">
-                <button class="button-rounded" id="send-family-amount">Enviar</button>
+
+
+            <input class="input-rounded" type="number" id="quantity-family">
+            <button class="button-rounded" id="send-family-amount">Enviar</button>
 
         </div>
-        <div id="labels-inputs"></div>
+
+        <div id="family-members"></div>
+
         </form>
         <div id="result" class="hidden">
             <em id="average"> </em>
             <br>
-            <em id="higher"> </em>
+            <em id="oldest"> </em>
             <br>
-            <em id="lower"> </em>
+            <em id="youngest"> </em>
             <br>
             <input id="btn-again" class="button-rounded" type="button" value="Empezar de Nuevo" onClick="document.location.reload(true)">
 
