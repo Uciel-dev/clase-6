@@ -8,7 +8,20 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 borrando los inputs ya creados (investigar cómo en MDN).
 */
 
+//---------------------Maneja los errores----------------------------
 
+
+function handleQuantityFamilyError(error) {
+
+    if (error === '') {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+//--------------Se implementa la solucion-----------------------------
 function isPositiveNumber(number) {
     return number > 0;
 }
@@ -19,7 +32,6 @@ function resetFamilyQuantity() {
 
 function tryAgain() {
     resetFamilyQuantity()
-    alert('El numero debe ser mayor a cero.');
 }
 
 function createLabel() {
@@ -124,13 +136,19 @@ document.querySelector('#send-family-amount').onclick = function() {
 
     const quantityFamily = Number(document.querySelector('#quantity-family').value);
 
-    if (isPositiveNumber(quantityFamily)) {
+    const errorQuantityFamily = validateQuantityFamily(quantityFamily)
+
+
+
+    if (handleQuantityFamilyError(errorQuantityFamily) && isPositiveNumber(quantityFamily)) {
 
         createFamilyMembersAgeInput(quantityFamily);
 
     } else {
 
         tryAgain()
+        alert('Revise el numero ingresado, tiene que ser mayor que cero y sin coma o punto');
+
     }
 
     return false;
