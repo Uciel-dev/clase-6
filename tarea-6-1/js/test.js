@@ -1,28 +1,40 @@
 //Se realizan los test de la clase6-1
+const nodeListAge = getAgesAllMembers()
+
+console.log(nodeListAge)
 
 function getQuantityFamily() {
+
     document.querySelector('#quantity-family').value
 }
 
-const quantityFamily = getQuantityFamily()
+
+function getAgesAllMembers() {
+
+    return document.querySelectorAll('.input-members')
+}
+
 
 function isANumberWithComma(number) {
+
     if (/,/.test(number) || /\./.test(number)) {
-        return false
+        return true
     }
 
-    return true
+    return false
 }
 
 
 function validateQuantityFamily(quantityFamily) {
-    if (!isANumberWithComma(quantityFamily)) {
+
+    if (isANumberWithComma(quantityFamily)) {
         return 'El numero no debe contener coma o punto'
     }
 
     return ''
 }
 
+//--------------------------Se testean las validaciones --------------------------
 
 function testValidateQuantilyFamily() {
     console.assert(

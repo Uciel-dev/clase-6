@@ -34,26 +34,30 @@ function tryAgain() {
     resetFamilyQuantity()
 }
 
-function createLabel() {
+function createLabel(index) {
+
     const $label = document.createElement('label');
-    const $txt = document.createTextNode('Familar:');
+    const $txt = document.createTextNode(`Familiar${index}:`);
+
     $label.appendChild($txt);
 
     return $label;
 }
 
-function createInput() {
+function createInput(index) {
+
     const $input = document.createElement('input');
+
     $input.type = "number";
     $input.className = "input-members";
     $input.placeholder = "Ingrese su edad";
-
+    $input.id = 'member-' + index
     return $input;
 }
 
 
 function showCalulate() {
-    document.querySelector('.hidden').className = '';
+    document.querySelector('#result').className = '';
 }
 
 function familyMembersStyleContainer() {
@@ -65,28 +69,32 @@ function styleResults() {
 }
 
 
-function showResults(average, oldest, yongest) {
+function showResults(average, oldest, youngest) {
 
     showCalulate()
     styleResults()
 
     document.querySelector('#average').innerHTML = `El promedio es: ${average}`;
     document.querySelector('#oldest').innerHTML = `El mayor es: ${oldest}`;
-    document.querySelector('#yongest').innerHTML = `El menor es: ${yongest}`;
+    document.querySelector('#youngest').innerHTML = `El menor es: ${youngest}`;
 }
 
 
 function createCalculateButton() {
+
     const $calculateBtn = document.createElement('button');
     $calculateBtn.textContent = "Calcular";
     $calculateBtn.className = "button-rounded";
 
     $calculateBtn.onclick = function() {
-        const $inputAge = document.querySelectorAll('.input-members');
+
+        const $nodeListAge = document.querySelectorAll('.input-members');
         const ageList = [];
 
-        for (let i = 0; i < $inputAge.length; i++) {
-            ageList.push(Number($inputAge[i].value));
+
+        for (let i = 0; i < $nodeListAge.length; i++) {
+
+            ageList.push(Number($nodeListAge[i].value))
         }
 
         const oldest = getOldest(ageList);
@@ -96,7 +104,6 @@ function createCalculateButton() {
         showResults(average, oldest, youngest);
     }
 
-
     return $calculateBtn;
 }
 
@@ -105,10 +112,10 @@ function renderFamilyMembersUI(totalFamilyMembers) {
     const $familyMembers = document.querySelector('#family-members');
 
     for (let i = 0; i < totalFamilyMembers; i++) {
-        const $label = createLabel();
+        const $label = createLabel(i + 1);
         $familyMembers.appendChild($label);
 
-        const $input = createInput();
+        const $input = createInput(i);
         $familyMembers.appendChild($input);
 
         $familyMembers.appendChild(document.createElement('br'));
@@ -137,8 +144,6 @@ document.querySelector('#send-family-amount').onclick = function() {
     const quantityFamily = Number(document.querySelector('#quantity-family').value);
 
     const errorQuantityFamily = validateQuantityFamily(quantityFamily)
-
-
 
     if (handleQuantityFamilyError(errorQuantityFamily) && isPositiveNumber(quantityFamily)) {
 
